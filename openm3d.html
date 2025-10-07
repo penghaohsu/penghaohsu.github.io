@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="OpenM3D: Open Vocabulary Multi-view Indoor 3D Object Detection without Human Annotations">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenM3D: Open Vocabulary Multi-view Indoor 3D Object Detection without Human Annotations</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">OpenM3D: Open Vocabulary Multi-view Indoor 3D Object Detection without Human Annotations</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a target="_blank" href="https://penghaohsu.github.io/">Peng-Hao Hsu</a><sup>1*</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="">Ke Zhang</a><sup>2*</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="https://fuenwang.phd/">Fu-En Wang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="https://ttaoretw.github.io/">Tao Tu</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="">Ming-Feng Li</a><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="https://yulunalexliu.github.io/">Yu-Lun Liu</a><sup>5</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="">Albert Y. C. Chen</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="https://aliensunmin.github.io/">Min Sun</a><sup>1, 2†</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="">Cheng-Hao Kuo</a><sup>2†</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>National Tsing Hua University</span>&nbsp;&nbsp;,
+            <span class="author-block"><sup>2</sup>Amazon</span>,
+            <span class="author-block"><sup>3</sup>Cornell University</span>,
+            <span class="author-block"><sup>4</sup>Carnegie Mellon University</span>,
+            <span class="author-block"><sup>5</sup>National Yang Ming Chiao Tung University</span>
+          </div>
+          
+          <div class="column has-text-centered">
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><b>ICCV, 2025</b></span>
+            </div>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2508.20063"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                  </span>
+                  <span>X/Twitter</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+        <!-- Particle-Grid Neural Dynamics is a learning-based digital twin framework for deformable objects, trained on real RGB-D videos and operable directly on raw observations. -->
+      </h2>
+      <video autoplay controls muted loop playsinline height="100%">
+        <source src="vids/pgnd/teaser.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+        Try our Huggingface interactive demo of PGND simulating 3D Gaussians:
+        <br>
+        <span class="link-block">
+          <a href="https://huggingface.co/spaces/kaifz/pgnd"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">🤗</span>
+            <span>Interactive Demo</span>
+          </a>
+        </span>
+      </h2>
+      <video autoplay controls muted loop playsinline height="100%">
+        <source src="vids/pgnd/demo.mp4" type="video/mp4">
+      </video>
+      <!-- <div class="columns is-centered has-text-centered">
+      </div>
+      <iframe
+          src="https://kaifz-pgnd.hf.space"
+          frameborder="0"
+          width="850"
+          height="450"
+      ></iframe> -->
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+          <p>
+            Open-vocabulary (OV) 3D object detection is an emerging field, yet its exploration through image-based methods remains limited compared to 3D point cloud-based methods. We introduce OpenM3D, a novel open-vocabulary multi-view indoor 3D object detector trained without human annotations. In particular, OpenM3D is a single-stage detector adapting the 2D-induced voxel features from the ImGeoNet model. To support OV, it is jointly trained with a class-agnostic 3D localization loss requiring high-quality 3D pseudo boxes and a voxel-semantic alignment loss requiring diverse pre-trained CLIP features. We follow the training setting of OV-3DET where posed RGB-D images are given but no human annotations of 3D boxes or classes are available. We propose a 3D Pseudo Box Generation method using a graph embedding technique that combines 2D segments into coherent 3D structures. Our pseudo-boxes achieve higher precision and recall than other methods, including the method proposed in OV-3DET. We further sample diverse CLIP features from 2D segments associated with each coherent 3D structure to align with the corresponding voxel feature. The key to training a highly accurate single-stage detector requires both losses to be learned toward high-quality targets. At inference, OpenM3D, a highly efficient detector, requires only multi-view images for input and demonstrates superior accuracy and speed (0.3 sec. per scene) on ScanNet200 and ARKitScenes indoor benchmarks compared to existing methods. We outperform a strong two-stage method that leverages our class-agnostic detector with a ViT CLIP-based OV classifier and a baseline incorporating multi-view depth estimator on both accuracy and speed.
+           </p>
+          </div>
+        </div>
+      </div>
+      <!-- Paper video. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/SZThFL6gfXg"
+              frameborder="0" allow="autoplay controls; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    
+    <h2 class="title is-3">Motivation</h3>
+      <p> 
+        Simulating deformable objects like cloths and ropes is hard because of their 
+        complex physics and partial observability. In this work, 
+        we overcome these challenges by learning a neural model for object dynamics 
+        directly from real-world videos.
+      </p>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-fullwidth">
+          <video autoplay controls muted loop playsinline>
+            <source src="vids/pgnd/motivation.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+    <h2 class="title is-3">Method</h3>
+    <div class="content has-text-justified">
+      <p> 
+        The particle-based neural dynamics model represents objects as dense 3D particles 
+        and predicts their next-step velocities to simulate the object dynamics.
+        It consists of three stages: particle encoding, grid velocity editing, and grid-to-particle velocity transfer.
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-fullwidth">
+        <video autoplay controls muted loop playsinline>
+          <source src="vids/pgnd/method.mp4" type="video/mp4">
+        </video> 
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+
+<section class="section" id="Results">
+    <!-- Result. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Quantitative Results</h2>
+        <div class="table_wrapper">
+          <table class="table is-hoverable is-bordered">
+            <thead>
+              <tr>
+                <th scope="col" style="vertical-align:middle;text-align:center;" rowspan="2">Method</th>
+                <th scope="col" style="vertical-align:middle;text-align:center;" rowspan="2">Input</th>
+                <th scope="col" colspan="2">(1) Noisy & sparse &#9729;&#65039;</th>
+                <th scope="col" colspan="1">(2) Diverse objects &#129327;</th>
+                <th scope="col" colspan="2">(3) Benchmark &#9878;&#65039;</th>
+              </tr>
+              <tr>
+                <th scope="col">mAP@0.25</th>
+                <th scope="col">mAP@0.5</th>
+                <th scope="col">mAP@0.25</th>
+                <th scope="col">mAP@0.25</th>
+                <th scope="col">mAP@0.5</th>
+              </tr>
+            </thead>
+            <tr color="red">
+              <td scope="col" style="text-align:left"><span class="highlight">ImGeoNet</span></td>
+              <td scope="col">RGB</td>
+              <td scope="col"><span class="highlight">60.2</span></td>
+              <td scope="col"><span class="highlight">43.4</span></td>
+              <td scope="col"><span class="highlight">22.3</span></td>
+              <td scope="col">54.8</td>
+              <td scope="col">28.4</td>
+            </tr>
+            <tr>
+              <td scope="col" style="text-align:left">ImVoxelNet</td>
+              <td scope="col">RGB</td>
+              <td scope="col">58.0</td>
+              <td scope="col">38.8</td>
+              <td scope="col">19.0</td>
+              <td scope="col">48.7</td>
+              <td scope="col">23.8</td>
+            </tr>
+            <tr>
+              <td scope="col" style="text-align:left">VoteNet</td>
+              <td scope="col">Point cloud (costly!!)</td>
+              <td scope="col">53.3</td>
+              <td scope="col">38.5</td>
+              <td scope="col">19.8</td>
+              <td scope="col"><span class="highlight">58.6</span></td>
+              <td scope="col"><span class="highlight">33.5</span></td>
+            </tr>
+          </table>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            In practical situations, (1) depth images often exhibit noise and sparsity, as seen in ARKitScenes, and (2) objects can display considerable variation, as exemplified by ScanNet200.
+            We demonstrate that ImGeoNet surpasses prior techniques in addressing these real-world conditions.
+            (3) Lastly, we evaluate ImGeoNet against previous approaches using the standardized ScanNet benchmark, comprising superior depth images and point clouds.
+            Although VoteNet exhibits superior accuracy in this case, it's worth noting that point cloud-based methods are constrained by reliance on expensive 3D sensor data.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Result. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Qualitative Results</h2>
+        <center><img src="./static/images/openm3d_qualitative.jpg" width="80%"></center>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+@inproceedings{hsu2025openm3d,
+  title={OpenM3D: Open Vocabulary Multi-view Indoor 3D Object Detection without Human Annotations},
+  author={Hsu, Peng-Hao and Zhang, Ke and Wang, Fu-En and Tu, Tao and Li, Ming-Feng and Liu, Yu-Lun and Chen, Albert YC and Sun, Min and Kuo, Cheng-Hao},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year={2025}
+}
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/penghaohsu" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="content has-text-centered">
+        <p>
+          The template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
