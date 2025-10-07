@@ -11,19 +11,20 @@
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <!-- Root-relative asset paths so the page works at /projects/openm3d/ -->
+  <link rel="stylesheet" href="/static/css/bulma.min.css">
+  <link rel="stylesheet" href="/static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="/static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="/static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="/static/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+  <script defer src="/static/js/fontawesome.all.min.js"></script>
+  <script src="/static/js/bulma-carousel.min.js"></script>
+  <script src="/static/js/bulma-slider.min.js"></script>
+  <script src="/static/js/index.js"></script>
 </head>
 <body>
 
@@ -128,10 +129,10 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <h2 class="subtitle has-text-centered">
-        <!-- Particle-Grid Neural Dynamics is a learning-based digital twin framework for deformable objects, trained on real RGB-D videos and operable directly on raw observations. -->
+        <!-- teaser subtitle (optional) -->
       </h2>
       <video autoplay controls muted loop playsinline height="100%">
-        <source src="vids/pgnd/teaser.mp4" type="video/mp4">
+        <source src="/vids/pgnd/teaser.mp4" type="video/mp4">
       </video>
     </div>
     <div class="hero-body">
@@ -147,7 +148,7 @@
         </span>
       </h2>
       <video autoplay controls muted loop playsinline height="100%">
-        <source src="vids/pgnd/demo.mp4" type="video/mp4">
+        <source src="/vids/pgnd/demo.mp4" type="video/mp4">
       </video>
 
     </div>
@@ -186,7 +187,7 @@
 <section class="section">
   <div class="container is-max-widescreen">
     
-    <h2 class="title is-3">Motivation</h3>
+    <h2 class="title is-3">Motivation</h2>
       <p> 
         Simulating deformable objects like cloths and ropes is hard because of their 
         complex physics and partial observability. In this work, 
@@ -196,22 +197,23 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-fullwidth">
           <video autoplay controls muted loop playsinline>
-            <source src="vids/pgnd/motivation.mp4" type="video/mp4">
+            <source src="/vids/pgnd/motivation.mp4" type="video/mp4">
           </video>
         </div>
       </div>
 
-    <h2 class="title is-3">Method</h3>
+    <h2 class="title is-3">Method</h2>
     <div class="content has-text-justified">
       <p> 
         The particle-based neural dynamics model represents objects as dense 3D particles 
         and predicts their next-step velocities to simulate the object dynamics.
         It consists of three stages: particle encoding, grid velocity editing, and grid-to-particle velocity transfer.
+      </p>
     </div>
     <div class="columns is-centered has-text-centered">
       <div class="column is-fullwidth">
         <video autoplay controls muted loop playsinline>
-          <source src="vids/pgnd/method.mp4" type="video/mp4">
+          <source src="/vids/pgnd/method.mp4" type="video/mp4">
         </video> 
       </div>
     </div>
@@ -232,9 +234,9 @@
               <tr>
                 <th scope="col" style="vertical-align:middle;text-align:center;" rowspan="2">Method</th>
                 <th scope="col" style="vertical-align:middle;text-align:center;" rowspan="2">Input</th>
-                <th scope="col" colspan="2">(1) Noisy & sparse &#9729;&#65039;</th>
-                <th scope="col" colspan="1">(2) Diverse objects &#129327;</th>
-                <th scope="col" colspan="2">(3) Benchmark &#9878;&#65039;</th>
+                <th scope="col" colspan="2">(1) Noisy & sparse ☁️</th>
+                <th scope="col" colspan="1">(2) Diverse objects 🧠</th>
+                <th scope="col" colspan="2">(3) Benchmark ⚖️</th>
               </tr>
               <tr>
                 <th scope="col">mAP@0.25</th>
@@ -287,7 +289,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Qualitative Results</h2>
-        <center><img src="./static/images/openm3d_qualitative.jpg" width="80%"></center>
+        <center><img src="/static/images/openm3d_qualitative.jpg" width="80%"></center>
       </div>
     </div>
   </div>
