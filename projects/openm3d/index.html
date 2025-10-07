@@ -154,6 +154,15 @@
 <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container is-max-desktop">
+      <!-- Paper video (moved above Abstract; heading removed) -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/"
+              frameborder="0" allow="autoplay controls; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
       <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
@@ -165,16 +174,6 @@
           <p>
             We propose a 3D Pseudo Box Generation method using a graph embedding technique that combines 2D segments into coherent 3D structures. Our pseudo-boxes achieve higher precision and recall than other methods, including the method proposed in OV-3DET. We further sample diverse CLIP features from 2D segments associated with each coherent 3D structure to align with the corresponding voxel feature. The key to training a highly accurate single-stage detector requires both losses to be learned toward high-quality targets. At inference, OpenM3D, a highly efficient detector, requires only multi-view images for input and demonstrates superior accuracy and speed (0.3 sec. per scene) on ScanNet200 and ARKitScenes indoor benchmarks compared to existing methods. We outperform a strong two-stage method that leverages our class-agnostic detector with a ViT CLIP-based OV classifier and a baseline incorporating multi-view depth estimator on both accuracy and speed.
           </p>
-          </div>
-        </div>
-      </div>
-      <!-- Paper video. -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Video</h2>
-          <div class="publication-video">
-            <iframe src="https://www.youtube.com/"
-              frameborder="0" allow="autoplay controls; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
