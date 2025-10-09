@@ -205,18 +205,60 @@
 
     <h2 class="title is-3">Method</h2>
     <div class="content has-text-justified">
-      <p> 
-        The particle-based neural dynamics model represents objects as dense 3D particles 
-        and predicts their next-step velocities to simulate the object dynamics.
-        It consists of three stages: particle encoding, grid velocity editing, and grid-to-particle velocity transfer.
+      <p>
+        <strong>OpenM3D</strong> is a <em>single-stage</em> open-vocabulary (OV) multi-view 3D detector trained
+        <strong>without human annotations</strong>. It adapts ImGeoNet's geometry-shaped <em>voxel features</em> and learns from two
+        complementary signals: a <em>class-agnostic 3D localization</em> objective supervised by high-quality <em>3D pseudo boxes</em>,
+        and an <em>open-set recognition</em> objective by aligning 3D voxel features with diverse CLIP embeddings sampled from
+        multi-view segments. At inference, only multi-view RGB images and camera poses are needed—no depth or CLIP forward pass—
+        enabling efficient (~0.3 s/scene) and accurate OV 3D detection.
       </p>
     </div>
+
+    <!-- 3D Pseudo Box Generation figure (export from paper and save as /static/images/openm3d_pseudo_boxes.png) -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-fullwidth">
-        <video autoplay controls muted loop playsinline>
-          <source src="/vids/pgnd/method.mp4" type="video/mp4">
-        </video> 
+      <div class="column is-four-fifths">
+        <figure>
+          <img src="/static/images/pseudo_box.jpg" alt="3D Pseudo Box Generation" />
+          <figcaption class="has-text-grey is-size-6">
+            <em>3D Pseudo Box Generation.</em> Graph-embedding association groups multi-view 2D segments into coherent 3D structures
+            for fitting oriented pseudo boxes.
+          </figcaption>
+        </figure>
       </div>
+    </div>
+
+    <div class="content has-text-justified">
+      <p>
+        <strong>3D Pseudo Box Generation.</strong> From posed multi-view images, we obtain 2D segments and build a cross-view
+        association graph using geometric consistency (epipolar constraints, depth checks) and appearance cues. Coherent
+        multi-view groups are merged into 3D structures, to which we fit oriented bounding boxes as <em>pseudo boxes</em>. These
+        serve as high-quality training targets for a class-agnostic localization head and achieve higher precision/recall than
+        prior methods.
+      </p>
+    </div>
+
+    <!-- Pipeline / Overview figure (export from paper and save as /static/images/openm3d_method_overview.png) -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <figure>
+          <img src="/static/images/openm3d_model.jpg" alt="OpenM3D Training & Inference Pipeline" />
+          <figcaption class="has-text-grey is-size-6">
+            <em>Pipeline.</em> Training leverages pseudo boxes for class-agnostic localization and diverse CLIP features for
+            voxel–semantic alignment on ImGeoNet voxel features. Inference uses only multi-view RGB + poses.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="content has-text-justified">
+      <p>
+        <strong>Pipeline.</strong> During <em>training</em>, ImGeoNet encodes multi-view images into voxel features. The detector head is
+        supervised by (i) class-agnostic 3D localization to the generated pseudo boxes, and (ii) voxel–semantic alignment that
+        matches voxel features to CLIP embeddings sampled from the associated multi-view segments—enabling open-vocabulary
+        recognition in a <em>single stage</em>. During <em>inference</em>, we predict 3D boxes and OV scores directly from multi-view RGB
+        and camera poses without depth or CLIP computation, providing both accuracy and speed.
+      </p>
     </div>
 
 
