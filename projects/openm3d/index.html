@@ -281,45 +281,64 @@
                 <thead>
                   <tr>
                     <th rowspan="2" style="vertical-align:middle;text-align:left;">Method</th>
-                    <th colspan="2" style="text-align:center;">ScanNet200 (Precision)</th>
-                    <th colspan="2" style="text-align:center;">ARKitScenes (Precision)</th>
+                    <th colspan="4" style="text-align:center;">ScanNet200</th>
+                    <th colspan="4" style="text-align:center;">ARKitScenes</th>
                   </tr>
                   <tr>
-                    <th style="text-align:center;">IoU@0.25</th>
-                    <th style="text-align:center;">IoU@0.5</th>
-                    <th style="text-align:center;">IoU@0.25</th>
-                    <th style="text-align:center;">IoU@0.5</th>
+                    <th style="text-align:center;">Prec@0.25</th>
+                    <th style="text-align:center;">Prec@0.5</th>
+                    <th style="text-align:center;">Rec@0.25</th>
+                    <th style="text-align:center;">Rec@0.5</th>
+                    <th style="text-align:center;">Prec@0.25</th>
+                    <th style="text-align:center;">Prec@0.5</th>
+                    <th style="text-align:center;">Rec@0.25</th>
+                    <th style="text-align:center;">Rec@0.5</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <!-- TODO: Fill numbers from paper -->
                   <tr>
                     <td style="text-align:left;">Ours (w/ MSR)</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">32.07</td>
+                    <td style="text-align:center;">18.14</td>
+                    <td style="text-align:center;">58.30</td>
+                    <td style="text-align:center;">32.99</td>
+                    <td style="text-align:center;">5.97</td>
+                    <td style="text-align:center;">1.58</td>
+                    <td style="text-align:center;">51.92</td>
+                    <td style="text-align:center;">13.74</td>
                   </tr>
                   <tr>
                     <td style="text-align:left;">Ours (w/o MSR)</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">27.09</td>
+                    <td style="text-align:center;">11.98</td>
+                    <td style="text-align:center;">52.43</td>
+                    <td style="text-align:center;">23.18</td>
+                    <td style="text-align:center;">6.06</td>
+                    <td style="text-align:center;">1.34</td>
+                    <td style="text-align:center;">51.40</td>
+                    <td style="text-align:center;">11.41</td>
                   </tr>
                   <tr>
-                    <td style="text-align:left;">OV-3DET</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
+                    <td style="text-align:left;">OV-3DET [28]</td>
+                    <td style="text-align:center;">11.62</td>
+                    <td style="text-align:center;">4.40</td>
+                    <td style="text-align:center;">21.13</td>
+                    <td style="text-align:center;">7.99</td>
+                    <td style="text-align:center;">3.74</td>
+                    <td style="text-align:center;">0.91</td>
+                    <td style="text-align:center;">32.43</td>
+                    <td style="text-align:center;">7.93</td>
                   </tr>
                   <tr>
-                    <td style="text-align:left;">SAM3D</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
+                    <td style="text-align:left;">SAM3D [55]</td>
+                    <td style="text-align:center;">14.48</td>
+                    <td style="text-align:center;">9.05</td>
+                    <td style="text-align:center;">57.70</td>
+                    <td style="text-align:center;">36.07</td>
+                    <td style="text-align:center;">6.01</td>
+                    <td style="text-align:center;">1.49</td>
+                    <td style="text-align:center;">43.78</td>
+                    <td style="text-align:center;">10.87</td>
                   </tr>
                 </tbody>
               </table>
@@ -338,24 +357,35 @@
                 <thead>
                   <tr>
                     <th style="text-align:left;">Method</th>
+                    <th style="text-align:left;">Trained Box / Candidate Box</th>
                     <th style="text-align:center;">mAP@0.25</th>
-                    <th style="text-align:center;">mAP@0.5</th>
                     <th style="text-align:center;">mAR@0.25</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <!-- TODO: Fill numbers from paper -->
                   <tr>
-                    <td style="text-align:left;">OpenM3D (ours)</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
+                    <td style="text-align:left;">OpenM3D</td>
+                    <td style="text-align:left;">OV-3DET [28]</td>
+                    <td style="text-align:center;">3.13</td>
+                    <td style="text-align:center;">10.83</td>
                   </tr>
                   <tr>
-                    <td style="text-align:left;">OV-3DET</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
+                    <td style="text-align:left;">OpenM3D</td>
+                    <td style="text-align:left;">SAM3D [55]</td>
+                    <td style="text-align:center;">3.92</td>
+                    <td style="text-align:center;">13.33</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left;">OpenM3D</td>
+                    <td style="text-align:left;">Ours (w/o MSR)</td>
+                    <td style="text-align:center;">4.04</td>
+                    <td style="text-align:center;">13.77</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left;">OpenM3D</td>
+                    <td style="text-align:left;">Ours</td>
+                    <td style="text-align:center;">4.23</td>
+                    <td style="text-align:center;">15.12</td>
                   </tr>
                 </tbody>
               </table>
@@ -374,30 +404,35 @@
                 <thead>
                   <tr>
                     <th style="text-align:left;">Method</th>
+                    <th style="text-align:left;">Trained Box</th>
                     <th style="text-align:center;">mAP@0.25</th>
-                    <th style="text-align:center;">mAP@0.5</th>
                     <th style="text-align:center;">mAR@0.25</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <!-- TODO: Fill numbers from paper -->
                   <tr>
-                    <td style="text-align:left;">OpenM3D (ours)</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
+                    <td style="text-align:left;">OpenM3D</td>
+                    <td style="text-align:left;">OV-3DET [28]</td>
+                    <td style="text-align:center;">19.53</td>
+                    <td style="text-align:center;">35.19</td>
                   </tr>
                   <tr>
-                    <td style="text-align:left;">Two-stage baseline</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
+                    <td style="text-align:left;">OpenM3D</td>
+                    <td style="text-align:left;">SAM3D [55]</td>
+                    <td style="text-align:center;">23.77</td>
+                    <td style="text-align:center;">47.82</td>
                   </tr>
                   <tr>
-                    <td style="text-align:left;">OV-3DET (trained boxes)</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
+                    <td style="text-align:left;">OpenM3D</td>
+                    <td style="text-align:left;">Ours (w/o MSR)</td>
+                    <td style="text-align:center;">25.95</td>
+                    <td style="text-align:center;">48.14</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left;">OpenM3D</td>
+                    <td style="text-align:left;">Ours</td>
+                    <td style="text-align:center;">26.92</td>
+                    <td style="text-align:center;">51.19</td>
                   </tr>
                 </tbody>
               </table>
@@ -416,37 +451,51 @@
                 <thead>
                   <tr>
                     <th style="text-align:left;">Method</th>
-                    <th style="text-align:center;">mAP@0.25</th>
-                    <th style="text-align:center;">mAP@0.5</th>
+                    <th style="text-align:left;">Training Data</th>
+                    <th style="text-align:center;">Input</th>
+                    <th style="text-align:center;">Detector</th>
+                    <th style="text-align:center;">AP@25 (%)</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <!-- TODO: Fill numbers from paper -->
                   <tr>
-                    <td style="text-align:left;">OpenM3D (ours)</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
+                    <td style="text-align:left;">OV-3DET† [28]</td>
+                    <td style="text-align:left;">ScanNet</td>
+                    <td style="text-align:center;">pc + im</td>
+                    <td style="text-align:center;">Two-Stage</td>
+                    <td style="text-align:center;">18.02</td>
                   </tr>
                   <tr>
-                    <td style="text-align:left;">ImGeoNet</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
+                    <td style="text-align:left;">CoDA† [3]</td>
+                    <td style="text-align:left;">ScanNet</td>
+                    <td style="text-align:center;">pc</td>
+                    <td style="text-align:center;">One-Stage</td>
+                    <td style="text-align:center;">19.32</td>
                   </tr>
                   <tr>
-                    <td style="text-align:left;">ImVoxelNet</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
+                    <td style="text-align:left;">ImOV3D† [54]</td>
+                    <td style="text-align:left;">ScanNet, LVIS</td>
+                    <td style="text-align:center;">pc</td>
+                    <td style="text-align:center;">One-Stage</td>
+                    <td style="text-align:center;">21.45</td>
                   </tr>
                   <tr>
-                    <td style="text-align:left;">VoteNet</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
+                    <td style="text-align:left;">Ours</td>
+                    <td style="text-align:left;">ScanNet</td>
+                    <td style="text-align:center;">im</td>
+                    <td style="text-align:center;">One-Stage</td>
+                    <td style="text-align:center;">19.76</td>
                   </tr>
                 </tbody>
               </table>
               <p class="is-size-7 has-text-grey" style="margin-top:0.5rem;">
-                <em>Caption note (from paper).</em> Add the same footnote here (e.g., protocol details, subsets, or symbols) to mirror the original caption faithfully.
+                <em>Notes.</em> † denotes OV-adapted variants from prior work. "pc" = point cloud, "im" = RGB images. Numbers are AP@25 (%) on ScanNetv2. ImOV3D additionally uses LVIS during training.
               </p>
+              <div class="content has-text-justified" style="line-height:1.7">
+                <p>
+                  Despite using only image inputs (<em>im</em>) and a single-stage head, <strong>OpenM3D</strong> achieves <strong>19.76 AP@25</strong> on ScanNetv2, outperforming the two-stage OV-3DET (pc+im) and approaching point-cloud–based one-stage methods. This highlights the competitiveness of our RGB-only, single-stage OV 3D detector under fair training data.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -459,37 +508,31 @@
                 <thead>
                   <tr>
                     <th style="text-align:left;">Method</th>
-                    <th style="text-align:center;">mAP@0.25</th>
-                    <th style="text-align:center;">mAP@0.5</th>
+                    <th style="text-align:center;">Trained Box</th>
+                    <th style="text-align:center;">mAR@25 (%)</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <!-- TODO: Fill numbers from paper -->
                   <tr>
-                    <td style="text-align:left;">OpenM3D (ours)</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
+                    <td style="text-align:left;">OpenM3D</td>
+                    <td style="text-align:center;">Ours</td>
+                    <td style="text-align:center;"><strong>42.77</strong></td>
                   </tr>
                   <tr>
-                    <td style="text-align:left;">ImGeoNet</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align:left;">ImVoxelNet</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align:left;">VoteNet</td>
-                    <td style="text-align:center;">—</td>
-                    <td style="text-align:center;">—</td>
+                    <td style="text-align:left;">S2D</td>
+                    <td style="text-align:center;">Ours</td>
+                    <td style="text-align:center;">19.58</td>
                   </tr>
                 </tbody>
               </table>
-              <p class="is-size-7 has-text-grey" style="margin-top:0.5rem;">
-                <em>Caption note (from paper).</em> Add the same footnote here (e.g., protocol details, subsets, or symbols) to mirror the original caption faithfully.
-              </p>
+              <div class="columns">
+                <div class="column is-offset-7 is-5">
+                  <div class="content is-size-7 has-text-left" style="font-style:italic;">
+                    <p><strong>Note:</strong><br>
+                    We do not report mAP on ARKitScenes due to limited classes (only 17), where detections on unlabeled objects are counted as false positives.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
