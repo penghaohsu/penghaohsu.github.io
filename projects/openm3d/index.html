@@ -273,71 +273,228 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Quantitative Results</h2>
-        <div class="table_wrapper">
-          <table class="table is-hoverable is-bordered">
-            <thead>
-              <tr>
-                <th scope="col" style="vertical-align:middle;text-align:center;" rowspan="2">Method</th>
-                <th scope="col" style="vertical-align:middle;text-align:center;" rowspan="2">Input</th>
-                <th scope="col" colspan="2">(1) Noisy & sparse ☁️</th>
-                <th scope="col" colspan="1">(2) Diverse objects 🧠</th>
-                <th scope="col" colspan="2">(3) Benchmark ⚖️</th>
-              </tr>
-              <tr>
-                <th scope="col">mAP@0.25</th>
-                <th scope="col">mAP@0.5</th>
-                <th scope="col">mAP@0.25</th>
-                <th scope="col">mAP@0.25</th>
-                <th scope="col">mAP@0.5</th>
-              </tr>
-            </thead>
-            <tr color="red">
-              <td scope="col" style="text-align:left"><span class="highlight">ImGeoNet</span></td>
-              <td scope="col">RGB</td>
-              <td scope="col"><span class="highlight">60.2</span></td>
-              <td scope="col"><span class="highlight">43.4</span></td>
-              <td scope="col"><span class="highlight">22.3</span></td>
-              <td scope="col">54.8</td>
-              <td scope="col">28.4</td>
-            </tr>
-            <tr>
-              <td scope="col" style="text-align:left">ImVoxelNet</td>
-              <td scope="col">RGB</td>
-              <td scope="col">58.0</td>
-              <td scope="col">38.8</td>
-              <td scope="col">19.0</td>
-              <td scope="col">48.7</td>
-              <td scope="col">23.8</td>
-            </tr>
-            <tr>
-              <td scope="col" style="text-align:left">VoteNet</td>
-              <td scope="col">Point cloud (costly!!)</td>
-              <td scope="col">53.3</td>
-              <td scope="col">38.5</td>
-              <td scope="col">19.8</td>
-              <td scope="col"><span class="highlight">58.6</span></td>
-              <td scope="col"><span class="highlight">33.5</span></td>
-            </tr>
-          </table>
+        <h3 class="title is-5" style="margin-top:1rem;">3D Pseudo Box Evaluation on ScanNet200 and ARKitScenes</h3>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <div class="table_wrapper">
+              <table class="table is-hoverable is-bordered is-fullwidth">
+                <thead>
+                  <tr>
+                    <th rowspan="2" style="vertical-align:middle;text-align:left;">Method</th>
+                    <th colspan="2" style="text-align:center;">ScanNet200 (Precision)</th>
+                    <th colspan="2" style="text-align:center;">ARKitScenes (Precision)</th>
+                  </tr>
+                  <tr>
+                    <th style="text-align:center;">IoU@0.25</th>
+                    <th style="text-align:center;">IoU@0.5</th>
+                    <th style="text-align:center;">IoU@0.25</th>
+                    <th style="text-align:center;">IoU@0.5</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- TODO: Fill numbers from paper -->
+                  <tr>
+                    <td style="text-align:left;">Ours (w/ MSR)</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left;">Ours (w/o MSR)</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left;">OV-3DET</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left;">SAM3D</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="is-size-7 has-text-grey" style="margin-top:0.5rem;">
+                <em>Note.</em> Our boxes, with and without Mesh Segmentation Refinement (MSR), exceed OV-3DET and SAM3D in precision at IoU 0.25/0.5 across both datasets. (a) See supplementary for head/common/tail breakdown on ScanNet200. (b) <span class="has-text-grey">* precision on ARKitScenes is expected to be low since only 17 classes are labeled; boxes on unlabeled objects are counted as false positives.</span>
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="content has-text-justified">
-          <p>
-            In practical situations, (1) depth images often exhibit noise and sparsity, as seen in ARKitScenes, and (2) objects can display considerable variation, as exemplified by ScanNet200.
-            We demonstrate that ImGeoNet surpasses prior techniques in addressing these real-world conditions.
-            (3) Lastly, we evaluate ImGeoNet against previous approaches using the standardized ScanNet benchmark, comprising superior depth images and point clouds.
-            Although VoteNet exhibits superior accuracy in this case, it's worth noting that point cloud-based methods are constrained by reliance on expensive 3D sensor data.
-          </p>
+
+        <h3 class="title is-5" style="margin-top:1.5rem;">Class-agnostic 3D Object Detection on ScanNet200</h3>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <div class="table_wrapper">
+              <table class="table is-hoverable is-bordered is-fullwidth">
+                <thead>
+                  <tr>
+                    <th style="text-align:left;">Method</th>
+                    <th style="text-align:center;">mAP@0.25</th>
+                    <th style="text-align:center;">mAP@0.5</th>
+                    <th style="text-align:center;">mAR@0.25</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- TODO: Fill numbers from paper -->
+                  <tr>
+                    <td style="text-align:left;">OpenM3D (ours)</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left;">OV-3DET</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="is-size-7 has-text-grey" style="margin-top:0.5rem;">
+                <em>Note.</em> Our single-stage framework benefits from higher-quality pseudo boxes and achieves stronger class-agnostic detection on ScanNet200.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="title is-5" style="margin-top:1.5rem;">3D Object Detection on ScanNet200</h3>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <div class="table_wrapper">
+              <table class="table is-hoverable is-bordered is-fullwidth">
+                <thead>
+                  <tr>
+                    <th style="text-align:left;">Method</th>
+                    <th style="text-align:center;">mAP@0.25</th>
+                    <th style="text-align:center;">mAP@0.5</th>
+                    <th style="text-align:center;">mAR@0.25</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- TODO: Fill numbers from paper -->
+                  <tr>
+                    <td style="text-align:left;">OpenM3D (ours)</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left;">Two-stage baseline</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left;">OV-3DET (trained boxes)</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="is-size-7 has-text-grey" style="margin-top:0.5rem;">
+                <em>Note.</em> OpenM3D surpasses two-stage and OV-3DET-trained baselines on ScanNet200, with larger gains on challenging categories.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="title is-5" style="margin-top:1.5rem;">3D Object Detection on ScanNetv2</h3>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <div class="table_wrapper">
+              <table class="table is-hoverable is-bordered is-fullwidth">
+                <thead>
+                  <tr>
+                    <th style="text-align:left;">Method</th>
+                    <th style="text-align:center;">mAP@0.25</th>
+                    <th style="text-align:center;">mAP@0.5</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- TODO: Fill numbers from paper -->
+                  <tr>
+                    <td style="text-align:left;">OpenM3D (ours)</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left;">ImGeoNet</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left;">ImVoxelNet</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left;">VoteNet</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="is-size-7 has-text-grey" style="margin-top:0.5rem;">
+                <em>Caption note (from paper).</em> Add the same footnote here (e.g., protocol details, subsets, or symbols) to mirror the original caption faithfully.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="title is-5" style="margin-top:1.5rem;">3D Object Detection on ARKitScenes</h3>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <div class="table_wrapper">
+              <table class="table is-hoverable is-bordered is-fullwidth">
+                <thead>
+                  <tr>
+                    <th style="text-align:left;">Method</th>
+                    <th style="text-align:center;">mAP@0.25</th>
+                    <th style="text-align:center;">mAP@0.5</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- TODO: Fill numbers from paper -->
+                  <tr>
+                    <td style="text-align:left;">OpenM3D (ours)</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left;">ImGeoNet</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left;">ImVoxelNet</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:left;">VoteNet</td>
+                    <td style="text-align:center;">—</td>
+                    <td style="text-align:center;">—</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="is-size-7 has-text-grey" style="margin-top:0.5rem;">
+                <em>Caption note (from paper).</em> Add the same footnote here (e.g., protocol details, subsets, or symbols) to mirror the original caption faithfully.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <!-- Result. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Qualitative Results</h2>
-        <center><img src="/static/images/openm3d_qualitative.jpg" width="80%"></center>
-      </div>
-    </div>
-  </div>
 </section>
 
 
