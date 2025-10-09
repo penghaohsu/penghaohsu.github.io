@@ -186,19 +186,22 @@
   <div class="container is-max-widescreen">
     
     <h2 class="title is-3">Motivation</h2>
-      <p> 
-        Simulating deformable objects like cloths and ropes is hard because of their 
-        complex physics and partial observability. In this work, 
-        we overcome these challenges by learning a neural model for object dynamics 
-        directly from real-world videos.
+      <p>
+        Open-vocabulary (OV) 3D object detection for indoor scenes has mostly relied on point-cloud inputs, 
+        which require costly 3D sensors and limit deployment. In contrast, multi-view image–based methods have 
+        recently achieved strong <em>fixed-vocabulary</em> 3D detection but do not support open vocabularies. 
+        <strong>OpenM3D</strong> closes this gap: it is the first multi-view, single-stage OV 3D detector trained 
+        <em>without human annotations</em>. Built on geometry-shaped voxel features from ImGeoNet, OpenM3D learns 
+        to localize objects with class-agnostic supervision from high-quality <em>3D pseudo boxes</em> and to recognize 
+        open-set categories via a novel <em>Voxel–Semantic Alignment</em> that matches 3D voxel features with diverse 
+        CLIP embeddings sampled from multi-view segments.
       </p>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-fullwidth">
-          <video autoplay controls muted loop playsinline>
-            <source src="/vids/pgnd/motivation.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
+      <p>
+        During inference, OpenM3D needs only multi-view RGB images and camera poses—no depth maps and no CLIP 
+        computation—making it highly efficient (<em>~0.3 s per scene</em>) while outperforming strong baselines such as 
+        OV-3DET and OpenMask3D on ScanNet200 and ARKitScenes in accuracy and speed. This brings practical, scalable 
+        OV 3D perception to applications like robotics and AR, without the overhead of expensive sensors or manual labels.
+      </p>
 
     <h2 class="title is-3">Method</h2>
     <div class="content has-text-justified">
