@@ -186,6 +186,7 @@
   <div class="container is-max-widescreen">
     
     <h2 class="title is-3">Motivation</h2>
+    <div class="content has-text-justified mb-6" style="line-height:1.7">
       <p>
         Open-vocabulary (OV) 3D object detection for indoor scenes has mostly relied on point-cloud inputs, 
         which require costly 3D sensors and limit deployment. In contrast, multi-view image–based methods have 
@@ -202,9 +203,10 @@
         OV-3DET and OpenMask3D on ScanNet200 and ARKitScenes in accuracy and speed. This brings practical, scalable 
         OV 3D perception to applications like robotics and AR, without the overhead of expensive sensors or manual labels.
       </p>
+    </div>
 
-    <h2 class="title is-3">Method</h2>
-    <div class="content has-text-justified">
+    <h2 class="title is-3" style="margin-top: 2.25rem;">Method</h2>
+    <div class="content has-text-justified mb-4" style="line-height:1.7">
       <p>
         <strong>OpenM3D</strong> is a <em>single-stage</em> open-vocabulary (OV) multi-view 3D detector trained
         <strong>without human annotations</strong>. It adapts ImGeoNet's geometry-shaped <em>voxel features</em> and learns from two
@@ -216,7 +218,7 @@
     </div>
 
     <!-- 3D Pseudo Box Generation figure (export from paper and save as /static/images/openm3d_pseudo_boxes.png) -->
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered has-text-centered my-5">
       <div class="column is-four-fifths">
         <figure>
           <img src="/static/images/pseudo_box.jpg" alt="3D Pseudo Box Generation" />
@@ -239,7 +241,7 @@
     </div>
 
     <!-- Pipeline / Overview figure (export from paper and save as /static/images/openm3d_method_overview.png) -->
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered has-text-centered my-6">
       <div class="column is-four-fifths">
         <figure>
           <img src="/static/images/openm3d_model.jpg" alt="OpenM3D Training & Inference Pipeline" />
@@ -251,7 +253,7 @@
       </div>
     </div>
 
-    <div class="content has-text-justified">
+    <div class="content has-text-justified" style="line-height:1.7">
       <p>
         <strong>Pipeline.</strong> During <em>training</em>, ImGeoNet encodes multi-view images into voxel features. The detector head is
         supervised by (i) class-agnostic 3D localization to the generated pseudo boxes, and (ii) voxel–semantic alignment that
